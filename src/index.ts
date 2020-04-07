@@ -1,5 +1,5 @@
 import './datatype'
-
+import './enum'
 
 let hello : string = 'hello typeScript'
 

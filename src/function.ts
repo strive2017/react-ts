@@ -43,3 +43,17 @@ function add7(x:number, ...other:number[]) {
 
 
 //函数重载
+//ts中函数重载，要求先定义名称相同的函数声明,谈后在类型最宽泛的版本中实现重载
+function add8(...rest:number[]) : number;
+function add8(...rest:string[]) : string;
+function add8(...rest: any[]) : any { 
+    let fist = rest[0];
+    if(typeof fist === "string"){
+        return rest.join('')
+    }
+    if(typeof fist === "number"){
+        return rest.reduce((pre,cur) => pre + cur)
+    }
+}
+console.log(add8(1,2,3,4,5))
+console.log(add8('a','b','c'))

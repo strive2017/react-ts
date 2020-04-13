@@ -54,3 +54,48 @@ interface Name{
     [x:string] : string
     [y:number] : string
 }
+
+
+
+// 函数类型
+
+let abc : (x:number, y:number) => number
+
+interface Add{
+    (x:number, y:number) : number
+}
+
+// 类型别名
+type Adds = (x:number, y:number) => number
+
+
+let adds : Adds = (a,b) => a + b
+
+//混合类型接口
+interface Lib{
+    ():void,
+    version : string,
+    doSomething() : void;
+}
+
+
+//对全局暴露一个lib，是一个单例，如果要创建多个lib就需要用函数封装
+// let lib : Lib = (()=>{}) as Lib;
+// lib.version = '1.0';
+// lib.doSomething =  () =>{}
+
+
+function getLib(){
+    let lib : Lib = (()=>{}) as Lib;
+    lib.version = '1.0';
+    lib.doSomething =  () =>{}
+    return lib;
+}
+
+let lib1 = getLib()
+lib1();
+lib1.doSomething()
+
+let lib2 = getLib()
+lib2();
+lib2.doSomething()

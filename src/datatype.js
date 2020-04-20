@@ -1,4 +1,8 @@
 "use strict";
+//类型注解
+//作用：相当于强类型语言中的类型声明
+//语法：(函数/变量) : type
+//ts vs js 区别：变量的类型定义后不可以改变
 //原始类型
 var bool = true;
 var num = 1;
@@ -6,11 +10,13 @@ var str = '1';
 //数组
 var arr1 = [1, 2, 3];
 var arr2 = [1, 2, 3];
-var arr3 = [1, 2, 3, 'abc'];
+// let arr3 : Array<number | string> = [1,2,3,'abc']
 //元组
 var tuple = [1, '1'];
+//元祖越界问题
 //函数
 var add = function (x, y) { return x + y; };
+//函数类型
 var compute;
 compute = function (a, b) { return a + b; };
 //对象

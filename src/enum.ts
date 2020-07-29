@@ -1,4 +1,4 @@
-//数字枚举
+//数字枚举 可以反向映射
 enum Role {
     a,
     b,
@@ -8,14 +8,13 @@ enum Role {
 }
 console.log(Role.b)
 
-
-//字符串枚举
+//字符串枚举 不可以反向映射
 enum Message{
     Success = '恭喜你成功',
     Fail = '很遗憾'
 }
 
-//异构枚举
+//异构枚举 容易混淆，不建议使用
 enum Answer{
     N,
     Y = 'yes'

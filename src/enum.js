@@ -1,5 +1,5 @@
 "use strict";
-//数字枚举
+//数字枚举 可以反向映射
 var Role;
 (function (Role) {
     Role[Role["a"] = 0] = "a";
@@ -9,13 +9,13 @@ var Role;
     Role[Role["e"] = 4] = "e";
 })(Role || (Role = {}));
 console.log(Role.b);
-//字符串枚举
+//字符串枚举 不可以反向映射
 var Message;
 (function (Message) {
     Message["Success"] = "\u606D\u559C\u4F60\u6210\u529F";
     Message["Fail"] = "\u5F88\u9057\u61BE";
 })(Message || (Message = {}));
-//异构枚举
+//异构枚举 容易混淆，不建议使用
 var Answer;
 (function (Answer) {
     Answer[Answer["N"] = 0] = "N";
